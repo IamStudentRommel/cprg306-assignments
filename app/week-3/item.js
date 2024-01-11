@@ -1,12 +1,14 @@
-export default function Item({name}, {quantity}, {category}){
+export default function Item({name, quantity, category}){
     return(
         <div>
-            <li className="bg-gray-200 p-4 mb-4 rounded-md shadow-md">
-                <div className="font-bold text-lg">{name}</div>
-                <div className="text-gray-700">{quantity}</div>
-                <div className="text-gray-700">{category}</div>
-            </li>
+            <ul>
+                <li class="p-2 m-4 bg-slate-900 max-w-sm">
+                    <h2 class="text-xl font-bold">{name}</h2>
+                    <div class="text-sm">
+                        Buy {quantity} in {category}
+                    </div>
+                </li>
+                </ul>
         </div>
     );
-
 }
