@@ -1,14 +1,8 @@
-import Link from 'next/link';
+import StudentInfo from './student-info';
 export default function Page() {
     return (
       <main>
-        <div>
-            <h1>Shopping List</h1>
-            <p>Rommel Hipos</p>
-            <Link className="hover:text-green-400 hover:underline" 
-            href={`https://github.com/IamStudentRommel`}> https://github.com/IamStudentRommel
-            </Link>
-        </div>
+        <StudentInfo/>
       </main>
     );
   }
