@@ -17,11 +17,14 @@ const NewItem = () => {
     console.log('hello item:', item);
 
     alert(`Add Item: ${name}, quantity: ${quantity}, category: ${category}`);
+    clearState();
+  };
 
+  const clearState = () => {
     setName('');
     setQuantity(1);
     setCategory('produce');
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} >
