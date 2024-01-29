@@ -31,9 +31,6 @@ export default function ItemList() {
           className={`p-1 m-2 w-28 ${
             sortBy === "name" ? "bg-orange-400" : "bg-orange-500"
           }`}
-          // style={{
-          //   backgroundColor: sortBy === "name" ? "orange" : "bg-orange-300",
-          // }}
         >
           Name
         </button>
@@ -42,16 +39,13 @@ export default function ItemList() {
           className={`p-1 m-2 w-28 ${
             sortBy === "name" ? "bg-orange-500" : "bg-orange-400"
           }`}
-          // style={{
-          //   backgroundColor:
-          //     sortBy === "category" ? "bg-orange-300" : "bg-orange-300",
-          // }}
         >
           Category
         </button>
       </div>
       <ul>
         {sortedItems.map((item) => (
+          // console.log(item)
           <Item key={item.id} {...item} />
         ))}
       </ul>
