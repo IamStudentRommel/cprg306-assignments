@@ -15,7 +15,7 @@ export default function ItemList() {
     }
   });
 
-  //Start - Added for challenge task
+  //Start - Added for challenge task here
   const groupedItems = {};
   sortedItems.forEach((item) => {
     const category = item.category;
