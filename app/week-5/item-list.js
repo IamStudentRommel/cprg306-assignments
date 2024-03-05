@@ -69,9 +69,7 @@ export default function ItemList() {
         <label
           class="absolute top-20 left-240  text-gray-600 text-xs italic"
           for="group-category"
-        >
-          {/* ← "Grouped Category" is an optional extra challenge */}
-        </label>
+        ></label>
       </div>
       <ul>
         {/* {sortedItems.map((item) => (
