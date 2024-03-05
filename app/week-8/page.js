@@ -12,7 +12,7 @@ export default function Page() {
   const handleLogout = async () => {
     await firebaseSignOut();
   };
-  // console.log(user);
+  console.log(user);
 
   return (
     <main>
