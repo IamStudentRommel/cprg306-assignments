@@ -26,7 +26,7 @@ export default function Page() {
       {user && (
         <div className="text-lg">
           <p>
-            Signed in as, ({user.displayName} {user.email}).
+            Signed in as {user.displayName} ({user.email}).
           </p>
           <div className="container">
             <button onClick={handleLogout} className="text-lg hover:underline">
@@ -34,7 +34,7 @@ export default function Page() {
             </button>
           </div>
           <Link
-            href="/week-8/shopping-list"
+            to="/auth-test/shopping-list" // Assuming this is the correct URL when user is authenticated
             className="text-lg hover:underline"
           >
             Continue to your Shopping List
