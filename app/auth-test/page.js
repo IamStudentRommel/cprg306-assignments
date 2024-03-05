@@ -3,30 +3,33 @@ import { useUserAuth } from "./_utils/auth-context";
 import Link from "next/link";
 
 export default function Page() {
-  const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+  const { user, googleSignIn, firebaseSignOut } = useUserAuth();
 
   const handleLogin = async () => {
-    await gitHubSignIn();
+    try {
+      await googleSignIn(); // Call the googleSignIn function to initiate Google authentication
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const handleLogout = async () => {
     await firebaseSignOut();
   };
-  console.log(user);
 
   return (
     <main>
-      <h1 class="text-4xl font-bold mb-5">Shopping List App</h1>
+      <h1 className="text-4xl font-bold mb-5">Shopping List App</h1>
 
       {!user && (
         <button onClick={handleLogin} className="text-lg">
-          Sign In with GitHub
+          Sign In with Google
         </button>
       )}
       {user && (
         <div className="text-lg">
           <p>
-            Signed in as, ({user.displayName} {user.email}).
+            Signed in as {user.displayName} ({user.email}).
           </p>
           <div className="container">
             <button onClick={handleLogout} className="text-lg hover:underline">
@@ -34,7 +37,7 @@ export default function Page() {
             </button>
           </div>
           <Link
-            href="/week-8/shopping-list"
+            href="/auth-test/shopping-list"
             className="text-lg hover:underline"
           >
             Continue to your Shopping List
