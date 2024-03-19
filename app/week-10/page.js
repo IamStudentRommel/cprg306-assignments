@@ -11,12 +11,13 @@ export default function Page() {
 
   const handleLogout = async () => {
     await firebaseSignOut();
+    window.location.href = "/week-10";
   };
-  console.log(user);
+  // console.log(user);
 
   return (
     <main>
-      <h1 class="text-4xl font-bold mb-5">Shopping List App</h1>
+      <h1 className="text-4xl font-bold mb-5">Shopping List App</h1>
 
       {!user && (
         <button onClick={handleLogin} className="text-lg">
@@ -34,7 +35,7 @@ export default function Page() {
             </button>
           </div>
           <Link
-            href="/week-8/shopping-list"
+            href="/week-10/shopping-list"
             className="text-lg hover:underline"
           >
             Continue to your Shopping List

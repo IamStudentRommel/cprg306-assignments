@@ -9,9 +9,11 @@ const ItemList = ({ items, onItemSelect }) => {
     .map((item) => item)
     .sort((a, b) => {
       if (sortBy === "name") {
-        return a.name.localeCompare(b.name);
+        return a.name && b.name ? a.name.localeCompare(b.name) : 0;
       } else if (sortBy === "category") {
-        return a.category.localeCompare(b.category);
+        return a.category && b.category
+          ? a.category.localeCompare(b.category)
+          : 0;
       }
       return 0;
     });
